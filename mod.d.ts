@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,43 +16,33 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
 
-var Complex64 = require( '@stdlib/complex-float32-ctor' );
-var addon = require( './../src/addon.node' );
-
-
-// MAIN //
+import { Complex64 } from '@stdlib/types/complex';
 
 /**
 * Evaluates the exponential function for a single-precision complex floating-point number.
 *
-* @private
-* @param {Complex64} z - complex number
-* @returns {Complex64} result
+* @param z - complex number
+* @returns result
 *
 * @example
 * var Complex64 = require( '@stdlib/complex-float32-ctor' );
-* var cexpf = require( '@stdlib/math-base-special-cexpf' );
 *
 * var v = cexpf( new Complex64( 0.0, 0.0 ) );
 * // returns <Complex64>[ 1.0, 0.0 ]
 *
 * @example
 * var Complex64 = require( '@stdlib/complex-float32-ctor' );
-* var cexpf = require( '@stdlib/math-base-special-cexpf' );
 *
 * var v = cexpf( new Complex64( 1.0, 0.0 ) );
 * // returns <Complex64>[ ~2.718, 0.0 ]
 */
-function cexpf( z ) {
-	var v = addon( z );
-	return new Complex64( v.re, v.im );
-}
+declare function cexpf( z: Complex64 ): Complex64;
 
 
 // EXPORTS //
 
-module.exports = cexpf;
+export = cexpf;
